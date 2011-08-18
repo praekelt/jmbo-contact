@@ -1,4 +1,4 @@
-from panya.generic.views import GenericForm
+from jmbo.generic.views import GenericForm
 from contact.forms import SiteContactForm
 
 class SiteContact(GenericForm):

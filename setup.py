@@ -1,21 +1,18 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='panya-contact',
+    name='jmbo-contact',
     version='0.0.6',
-    description='Panya contact form app.',
+    description='Jmbo contact form app.',
     long_description = open('README.rst', 'r').read(),
     author='Praekelt International',
     author_email='dev@praekelt.com',
     license='BSD',
-    url='http://github.com/praekelt/panya-contact',
+    url='http://github.com/praekelt/jmbo-contact',
     packages = find_packages(),
-    dependency_links = [
-        'https://github.com/praekelt/panya/tarball/master#egg=panya',
-    ],
     install_requires = [
         'django-preferences',
-        'panya',
+        'jmbo',
     ],
     include_package_data=True,
     classifiers = [
