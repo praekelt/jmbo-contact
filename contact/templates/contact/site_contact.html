@@ -1,19 +1,17 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
     <div class="page section_user">
 	    <div class="title">
-		    <h1>Contact Us</h1>
+		    {% blocktrans %}Contact us{% endblocktrans %}
 		</div>
-		<div class="generic">
-            <h2>{% if messages %}{{ messages|join:" "}}{% else %}Please use the form below to send us a message.{% endif %}</h2>
-            <form id="frmStationContact" method="post" class="cmxform">
-				{% csrf_token %}
-                {{ form.as_p }}
-                <p class="buttons">
-                    <input type="submit" name="submit" value="Submit" class="btn" />
-                </p>
-            </form>
-        </div>
+        <form method="POST">
+			{% csrf_token %}
+            {{ form.as_p }}
+            <div class="buttons">
+                <input type="submit" name="submit" value="{% blocktrans %}Submit{% endblocktrans %}" />
+            </div>
+        </form>
 	</div>
 {% endblock %}

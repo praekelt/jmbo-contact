@@ -1,4 +1,7 @@
+from django.http import HttpResponseRedirect
+
 from jmbo.generic.views import GenericForm
+
 from contact.forms import SiteContactForm
 
 
@@ -15,5 +18,8 @@ class SiteContact(GenericForm):
         """
         return "Thanks for getting in touch. We'll get back to you as \
 soon as possible."
+
+    def redirect(self, request, *args, **kwargs):
+        return HttpResponseRedirect('/')
 
 site_contact = SiteContact()
