@@ -5,3 +5,4 @@ Changelog
 ------------------
 #. Clean up template.
 #. Redirect to site root on success.
+#. Translations.
