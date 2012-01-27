@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-19 04:57-0600\n"
+"POT-Creation-Date: 2012-01-27 11:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,10 @@ msgstr "Un message"
 #: forms.py:31
 msgid "Please enter a message."
 msgstr "S'il vous plaît entrer un message."
+
+#: views.py:20
+msgid "Thanks for getting in touch. We'll get back to you as soon as possible."
+msgstr "Nous vous remercions de votre message. Nous vous répondrons dès que possible."
 
 #: templates/contact/site_contact.html:7
 msgid "Contact us"
