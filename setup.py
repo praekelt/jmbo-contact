@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='jmbo-contact',
-    version='0.0.7 (unreleased)',
+    version='0.0.7',
     description='Jmbo contact form app.',
-    long_description = open('README.rst', 'r').read(),
+    long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt International',
     author_email='dev@praekelt.com',
     license='BSD',
