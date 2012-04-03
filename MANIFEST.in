@@ -2,3 +2,4 @@ include AUTHORS
 include LICENSE
 include README.rst
 recursive-include contact/templates *
+recursive-include contact/locale *
