@@ -5,20 +5,17 @@ from django.utils.translation import ugettext as _
 
 from captcha.fields import ReCaptchaField
 from preferences import preferences
+from jmbo.forms import as_div
 
 
 class SiteContactForm(forms.Form):
     name = forms.CharField(
         label=_('Name'),
         max_length=150,
-        widget=forms.TextInput(attrs={'class': 'required shift'}),
-        error_messages={'required': _('Please enter your name.')}
     )
     email_address = forms.EmailField(
         label=_('Email address'),
         max_length=150,
-        widget=forms.TextInput(attrs={'class': 'required email shift'}),
-        error_messages={'required': _('Please enter your email address.')}
     )
     captcha = ReCaptchaField(
         label=_('Captcha'),
@@ -27,8 +24,6 @@ class SiteContactForm(forms.Form):
     message = forms.CharField(
         label=_('Message'),
         max_length=10000,
-        widget=forms.Textarea(attrs={'class': 'required shift'}),
-        error_messages={'required': _('Please enter a message.')}
     )
 
     def handle_valid(self, *args, **kwargs):
@@ -61,3 +56,5 @@ email address could be found.',
                 headers={'From': from_address, 'Reply-To': from_address}
             )
             mail.send(fail_silently=False)
+
+    as_div = as_div            

@@ -15,7 +15,7 @@ class SiteContact(GenericForm):
 
     def get_success_message(self, *args, **kwargs):
         """
-        Returns user message to display after successful submition.
+        Returns user message to display after successful submission.
         """
         return _("Thanks for getting in touch. We'll get back to you as \
 soon as possible.")
