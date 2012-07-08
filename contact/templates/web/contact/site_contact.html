@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div class="site-contact">
+	    <div class="title">
+		    {% blocktrans %}Contact us{% endblocktrans %}
+		</div>
+        <form action="{% url site_contact %}" method="POST">
+			{% csrf_token %}
+            {{ form.as_div }}
+            <div class="buttons">
+                <input type="submit" name="submit" value="{% blocktrans %}Submit{% endblocktrans %}" />
+            </div>
+        </form>
+	</div>
+{% endblock %}
