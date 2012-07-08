@@ -8,7 +8,7 @@ from preferences import preferences
 from jmbo.forms import as_div
 
 
-class SiteContactForm(forms.Form):
+class BaseSiteContactForm(forms.Form):
     name = forms.CharField(
         label=_('Name'),
         max_length=150,
@@ -17,13 +17,10 @@ class SiteContactForm(forms.Form):
         label=_('Email address'),
         max_length=150,
     )
-    captcha = ReCaptchaField(
-        label=_('Captcha'),
-        error_messages={'required': _('Please enter the text.')}
-    )
     message = forms.CharField(
         label=_('Message'),
         max_length=10000,
+        widget=forms.widgets.Textarea
     )
 
     def handle_valid(self, *args, **kwargs):
@@ -58,3 +55,14 @@ email address could be found.',
             mail.send(fail_silently=False)
 
     as_div = as_div            
+
+
+class SiteContactFormBasic(BaseSiteContactForm):
+    pass
+
+
+class SiteContactFormWeb(BaseSiteContactForm):    
+    captcha = ReCaptchaField(
+        label=_('Captcha'),
+        error_messages={'required': _('Please enter the text.')}
+    )

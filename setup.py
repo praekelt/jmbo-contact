@@ -11,7 +11,7 @@ setup(
     url='http://github.com/praekelt/jmbo-contact',
     packages = find_packages(),
     install_requires = [
-        'jmbo>=0.1.20',
+        'jmbo-foundry',       
     ],
     tests_require = [
         'django-setuptest',

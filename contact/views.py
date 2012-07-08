@@ -2,13 +2,15 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext as _
 
 from jmbo.generic.views import GenericForm
+from foundry.decorators import layered
 
-from contact.forms import SiteContactForm
+from contact.forms import SiteContactFormBasic, SiteContactFormWeb
 
 
-class SiteContact(GenericForm):
+class BaseSiteContact(GenericForm):
+
     def get_form_class(self, *args, **kwargs):
-        return SiteContactForm
+        return NotImplemented
 
     def get_template_name(self, *args, **kwargs):
         return 'contact/site_contact.html'
@@ -23,4 +25,22 @@ soon as possible.")
     def redirect(self, request, *args, **kwargs):
         return HttpResponseRedirect('/')
 
-site_contact = SiteContact()
+
+class SiteContactBasic(BaseSiteContact):
+
+    def get_form_class(self, *args, **kwargs):
+        return SiteContactFormBasic
+
+
+class SiteContactWeb(BaseSiteContact):
+
+    def get_form_class(self, *args, **kwargs):
+        return SiteContactFormWeb
+
+
+@layered(default='web')
+def site_contact(request):
+    return
+
+site_contact_basic = SiteContactBasic()
+site_contact_web = SiteContactWeb()
