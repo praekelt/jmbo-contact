@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='jmbo-contact',
-    version='0.0.7',
+    version='0.1',
     description='Jmbo contact form app.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt International',
@@ -11,7 +11,7 @@ setup(
     url='http://github.com/praekelt/jmbo-contact',
     packages = find_packages(),
     install_requires = [
-        'jmbo',
+        'jmbo-foundry>=0.4',
     ],
     tests_require = [
         'django-setuptest',
