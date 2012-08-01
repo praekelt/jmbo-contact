@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.1.1
+-----
+#. Remove debug statement in a template.
+
 0.1
 ---
 #. Introduce dependency on jmbo-foundry.
