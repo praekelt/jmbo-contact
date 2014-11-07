@@ -11,7 +11,8 @@ setup(
     url='http://github.com/praekelt/jmbo-contact',
     packages = find_packages(),
     install_requires = [
-        'jmbo-foundry>=0.4',
+        'django-recaptcha',
+        'jmbo-foundry>=0.4',    # django-layers can remove this dependency, but needs work
     ],
     tests_require = [
         'django-setuptest',
