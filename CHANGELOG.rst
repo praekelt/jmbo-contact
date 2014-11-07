@@ -1,8 +1,8 @@
 Changelog
 =========
 
-next
-----
+0.1.2
+-----
 #. PEP8 cleanup.
 #. Add recaptcha dependency.
 
