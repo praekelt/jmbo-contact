@@ -54,14 +54,14 @@ email address could be found.',
             )
             mail.send(fail_silently=False)
 
-    as_div = as_div            
+    as_div = as_div
 
 
 class SiteContactFormBasic(BaseSiteContactForm):
     pass
 
 
-class SiteContactFormWeb(BaseSiteContactForm):    
+class SiteContactFormWeb(BaseSiteContactForm):
     captcha = ReCaptchaField(
         label=_('Captcha'),
         error_messages={'required': _('Please enter the text.')}

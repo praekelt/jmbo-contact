@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.1.2
+-----
+#. PEP8 cleanup.
+#. Add recaptcha dependency.
+
 0.1.1
 -----
 #. Remove debug statement in a template.
