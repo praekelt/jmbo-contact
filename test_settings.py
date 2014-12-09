@@ -26,7 +26,6 @@ INSTALLED_APPS = (
     'secretballot',
     'publisher',
     'preferences',
-    'dfp',
     'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
