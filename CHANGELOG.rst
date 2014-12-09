@@ -1,6 +1,11 @@
 Changelog
 =========
 
+next
+----
+#. Remove dependency on jmbo-foundry.
+#. Refactor tests.
+
 0.1.2
 -----
 #. PEP8 cleanup.

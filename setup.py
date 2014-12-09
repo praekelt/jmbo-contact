@@ -12,12 +12,12 @@ setup(
     packages = find_packages(),
     install_requires = [
         'django-recaptcha',
-        'jmbo-foundry>=0.4',    # django-layers can remove this dependency, but needs work
+        'jmbo>=1.0',
     ],
     tests_require = [
-        'django-setuptest',
+        'django-setuptest>=0.1.4',
     ],
-    test_suite='setuptest.SetupTestSuite',
+    test_suite='setuptest.setuptest.SetupTestSuite',
     include_package_data=True,
     classifiers = [
         "Programming Language :: Python",

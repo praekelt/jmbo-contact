@@ -2,8 +2,11 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext as _
 
 from jmbo.generic.views import GenericForm
-from foundry.decorators import layered
-
+try:
+    from foundry.decorators import layered
+    HAS_FOUNDRY = True
+except ImportError:
+    HAS_FOUNDRY = False
 from contact.forms import SiteContactFormBasic, SiteContactFormWeb
 
 
@@ -38,9 +41,13 @@ class SiteContactWeb(BaseSiteContact):
         return SiteContactFormWeb
 
 
-@layered(default='web')
-def site_contact(request):
-    return
+if HAS_FOUNDRY:
+    @layered(default='web')
+    def site_contact(request):
+        return
 
-site_contact_basic = SiteContactBasic()
-site_contact_web = SiteContactWeb()
+    site_contact_basic = SiteContactBasic()
+    site_contact_web = SiteContactWeb()
+
+else:
+    site_contact = SiteContactFormWeb()
