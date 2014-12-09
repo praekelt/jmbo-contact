@@ -50,4 +50,4 @@ if HAS_FOUNDRY:
     site_contact_web = SiteContactWeb()
 
 else:
-    site_contact = SiteContactFormWeb()
+    site_contact = SiteContactWeb()
