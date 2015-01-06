@@ -1,7 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext as _
+from django.views.generic.edit import FormView
+from django.contrib import messages
 
-from jmbo.generic.views import GenericForm
 try:
     from foundry.decorators import layered
     HAS_FOUNDRY = True
@@ -10,35 +11,26 @@ except ImportError:
 from contact.forms import SiteContactFormBasic, SiteContactFormWeb
 
 
-class BaseSiteContact(GenericForm):
+class BaseSiteContact(FormView):
+    form_class = NotImplemented
+    template_name = "contact/site_contact.html"
+    success_url = "/"
 
-    def get_form_class(self, *args, **kwargs):
-        return NotImplemented
-
-    def get_template_name(self, *args, **kwargs):
-        return 'contact/site_contact.html'
-
-    def get_success_message(self, *args, **kwargs):
-        """
-        Returns user message to display after successful submission.
-        """
-        return _("Thanks for getting in touch. We'll get back to you as \
+    def form_valid(self, form):
+        message.success(
+            self.request, 
+            _("Thanks for getting in touch. We'll get back to you as \
 soon as possible.")
-
-    def redirect(self, request, *args, **kwargs):
-        return HttpResponseRedirect('/')
+        )
+        return super(BaseSiteContact, self).form_valid(form)
 
 
 class SiteContactBasic(BaseSiteContact):
-
-    def get_form_class(self, *args, **kwargs):
-        return SiteContactFormBasic
+    form_class = SiteContactFormBasic
 
 
 class SiteContactWeb(BaseSiteContact):
-
-    def get_form_class(self, *args, **kwargs):
-        return SiteContactFormWeb
+    form_class = SiteContactFormWeb
 
 
 if HAS_FOUNDRY:
@@ -46,8 +38,8 @@ if HAS_FOUNDRY:
     def site_contact(request):
         return
 
-    site_contact_basic = SiteContactBasic()
-    site_contact_web = SiteContactWeb()
+    site_contact_basic = SiteContactBasic.as_view()
+    site_contact_web = SiteContactWeb.as_view()
 
 else:
-    site_contact = SiteContactWeb()
+    site_contact = SiteContactWeb.as_view()
