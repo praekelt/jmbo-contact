@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='jmbo-contact',
-    version='0.1.2',
+    version='2.0.0a1',
     description='Jmbo contact form app.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt International',
@@ -12,12 +12,12 @@ setup(
     packages = find_packages(),
     install_requires = [
         'django-recaptcha',
-        'jmbo-foundry>=0.4',    # django-layers can remove this dependency, but needs work
+        'jmbo==2.0.0a1',
     ],
     tests_require = [
-        'django-setuptest',
+        'django-setuptest>=0.1.4',
     ],
-    test_suite='setuptest.SetupTestSuite',
+    test_suite='setuptest.setuptest.SetupTestSuite',
     include_package_data=True,
     classifiers = [
         "Programming Language :: Python",

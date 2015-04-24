@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.0.0a1
+-------
+#. Remove dependency on jmbo-foundry.
+#. Refactor tests.
+#. Up minimum required jmbo to 2.0.0.
+
 0.1.2
 -----
 #. PEP8 cleanup.

@@ -6,7 +6,7 @@
 	    <div class="title">
 		    {% blocktrans %}Contact us{% endblocktrans %}
 		</div>
-        <form action="{% url site_contact %}" method="POST">
+        <form action="{% url "site_contact" %}" method="POST">
 			{% csrf_token %}
             {{ form.as_div }}
             <div class="buttons">
