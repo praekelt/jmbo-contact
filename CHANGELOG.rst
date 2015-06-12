@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.0
+-----
+#. Stabilize on Jmbo 2.0.0.
+
 2.0.0a1
 -------
 #. Remove dependency on jmbo-foundry.

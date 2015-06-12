@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='jmbo-contact',
-    version='2.0.0a2',
+    version='2.0.0',
     description='Jmbo contact form app.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt International',
@@ -12,10 +12,10 @@ setup(
     packages = find_packages(),
     install_requires = [
         'django-recaptcha',
-        'jmbo==2.0.0a2',
+        'jmbo>=2.0.0',
     ],
     tests_require = [
-        'django-setuptest>=0.1.4',
+        'django-setuptest>=0.1.6',
         'psycopg2',
     ],
     test_suite='setuptest.setuptest.SetupTestSuite',
